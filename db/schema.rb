@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_090640) do
   end
 
   create_table "departments", force: :cascade do |t|
+    t.string "anagram", null: false
     t.string "name", null: false
     t.boolean "is_valid", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
@@ -60,6 +61,8 @@ ActiveRecord::Schema.define(version: 2020_11_24_090640) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["department_id"], name: "index_users_on_department_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["employee_id"], name: "index_users_on_employee_id", unique: true
   end
 
   add_foreign_key "books", "requests"
