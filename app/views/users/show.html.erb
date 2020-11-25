@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1><%= @user.name %>さんのプロフィール</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-4">
+            NO IMAGE
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <div class="cart-title">
+                <%= @user.name %>(<%= @user.department.anagram %>)
+              </div>
+              <div class="cart-text">
+                <%= @user.department.name %>部
+              </div>
+              <div class="cart-text">
+                <%= @user.email %>
+              </div>
+              <div class="text-right">
+                <%= link_to 'プロフィールを編集', edit_user_path(@user), class: 'btn btn-primary' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12 text-right">
+      <%= link_to 'ユーザーの一覧に戻る', users_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>
