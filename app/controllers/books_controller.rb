@@ -8,4 +8,9 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
   end
+
+  def import
+    Book.import(params[:file])
+    redirect_to books_url, notice: I18n.t('label.csv_import')
+  end
 end
