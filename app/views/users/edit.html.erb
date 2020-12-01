@@ -24,10 +24,6 @@
           <%= f.label :email, 'メールアドレス' %><br>
           <%= f.text_field :email, class: 'form-control' %>
         </div>
-        <div class="form-group">
-          <%= f.label :is_valid, '在籍' %><br>
-          <%= f.select :is_valid, {"在籍中": true,"退職済": false }, { class: 'form-control' } %>
-        </div>
         <%= f.submit "情報更新" , class: "btn btn-success"  %>
       <% end %>
     </div>
