@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :department_id, numericality: {only_integer: true}
   validates :name, presence: true, length: {maximum: 30}
-  validates :employee_id, numericality: {only_integer: true}
+  validates :employee_id, numericality: {only_integer: true}, uniqueness: true
   validates :email, presence: true, length: { maximum: 50 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :is_valid, presence: true

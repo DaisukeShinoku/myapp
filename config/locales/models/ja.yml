@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        department_id: 部署ID
+        name: 氏名
+        employee_id: 従業員ID
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認用)
+        avatar: プロフィール画像
+        is_valid: 在籍情報
+        admin: 管理者権限
