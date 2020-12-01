@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-12 text-center">
+    <h1><%= @book.title %>の詳細情報</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col-4">
+          NO IMAGE
+        </div>
+        <div class="col-8">
+          <div class="card-body">
+            <div class="cart-title">
+              <%= @book.title %>
+            </div>
+            <div class="cart-text">
+              著:<%= @book.author %>
+            </div>
+            <div class="cart-text">
+              <%= @book.publisher %>
+            </div>
+            <div class="cart-text">
+              <%= l @book.on_sale, format: '%Y年%-m月%-d日' %>に発売
+            </div>
+            <div class="cart-text">
+              <%= @book.reason %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-12 text-right">
+    <%= link_to '書籍一覧に戻る', books_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
