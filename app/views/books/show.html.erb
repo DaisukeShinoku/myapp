@@ -27,6 +27,9 @@
             <div class="cart-text">
               <%= @book.reason %>
             </div>
+            <div class="cart-text">
+              <%= link_to "Amazonへ移動する", "#{@book.amazon_url}" %>
+            </div>
           </div>
         </div>
       </div>

@@ -16,3 +16,4 @@ ja:
     update_success: '%{model}を更新しました'
     destroy_success: '%{model}を削除しました'
     destroy_confirm: "この操作取り消せません\n本当に削除しますか??"
+    csv_import: 'ファイルをimportしました'

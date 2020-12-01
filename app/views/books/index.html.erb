@@ -2,7 +2,20 @@
   <div class="col-12 text-center">
     <h1>BOOKS</h1>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="col-12">
+    <h5>CSV File Import</h5>
+    <%= form_tag import_books_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "インポート" %>
+    <% end %>
+  </div>
 </div>
+<br>
+<br>
 <div class="row">
   <div class="col-12">
     <% @books.each do |book| %>
