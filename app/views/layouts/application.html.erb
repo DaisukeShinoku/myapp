@@ -14,9 +14,10 @@
   <body>
     <%= render 'layouts/header' %>
     <br>
-    <main id="wrapper">
-    <%= yield %>
-    </main>
+    <div id="wrapper" class="container">
+      <%= bootstrap_flash %>
+      <%= yield %>
+    </div>
     <br>
     <%= render 'layouts/footer' %>
   </body>
