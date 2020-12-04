@@ -1,4 +1,12 @@
 class Book < ApplicationRecord
+  validates :request_id, numericality: { allow_nil: true, only_integer: true }
+  validates :title, presence: true, length: {maximum: 30}
+  validates :author, presence: true, length: {maximum: 30}
+  validates :publisher, presence: true, length: {maximum: 30}
+  validates :amazon_url, length: {maximum: 300}
+  validates :reason, length: {maximum: 300}
+  validates :book_num, presence: true, numericality: { only_integer: true }
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       # IDが見つかれば、レコードを呼び出し、見つからなければ、新しく作成
