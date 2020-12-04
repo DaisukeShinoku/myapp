@@ -8,7 +8,9 @@ ja:
     edit:     編集
     destroy:  削除
     signup_success: BookShelfへようこそ！
+    newuser_success: 新しい社員データを登録しました
     login_success: ログインしました
+    admin_login_success: 管理者ログインしました
     logout_success: ログアウトしました
     pls_login: ログインしてください
     profile_update: プロフィール情報を更新しました
@@ -16,4 +18,5 @@ ja:
     update_success: '%{model}を更新しました'
     destroy_success: '%{model}を削除しました'
     destroy_confirm: "この操作取り消せません\n本当に削除しますか??"
-    csv_import: 'ファイルをimportしました'
+    csv_import: 'ファイルをインポートしました'
+    illegal_action: '不正な操作です'

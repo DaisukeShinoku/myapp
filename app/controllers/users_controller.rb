@@ -1,20 +1,27 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, except: [:new, :create]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :check_admin,     only: :destroy
 
   def new
     @user = User.new
   end
 
   def create
-    byebug
     @user = User.new(user_params)
-    if @user.save
-      log_in @user
-      redirect_to @user, notice: I18n.t('label.signup_success')
+    if logged_in? && current_user.admin?
+      if @user.save
+        redirect_to admin_users_url, notice: I18n.t('label.newuser_success')
+      else
+        render template: "admin::users/new"
+      end
     else
-      render 'new'
+      if @user.save
+        log_in @user
+        redirect_to @user, notice: I18n.t('label.signup_success')
+      else
+        render 'new'
+      end
     end
   end
 

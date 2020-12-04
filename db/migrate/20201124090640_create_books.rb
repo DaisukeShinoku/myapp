@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration[6.0]
       t.string :author, null: false
       t.string :publisher, null: false
       t.text :amazon_url
-      t.text :reason, null: false
+      t.text :reason
       t.datetime :on_sale
       t.string :cover
 

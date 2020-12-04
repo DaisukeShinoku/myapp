@@ -11,10 +11,14 @@ class ApplicationController < ActionController::Base
 
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless @user == current_user
+    unless @user == current_user
+      redirect_to root_url, alert: I18n.t('label.illegal_action')
+    end
   end
 
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
+  def check_admin
+    unless current_user.admin?
+      redirect_to root_url, alert: I18n.t('label.illegal_action')
+    end
   end
 end

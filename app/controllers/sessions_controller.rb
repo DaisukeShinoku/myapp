@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       log_in @user
       params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
-      redirect_to @user, notice: I18n.t('label.login_success')
+      unless @user.admin?
+        redirect_to @user, notice: I18n.t('label.login_success')
+      else
+        redirect_to admin_root_url, notice: I18n.t('label.admin_login_success')
+      end
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
